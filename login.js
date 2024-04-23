@@ -1,5 +1,4 @@
-// Variables d'objets des éléments pour le login
-
+// Variables pour le login
 const submit = document.querySelector(".submit");
 const error = document.querySelector("form p");
 
@@ -15,7 +14,6 @@ let loginBtn = submit.addEventListener("click", async (e) => {
     const reponse = await fetch("http://localhost:5678/api/users/login", {
       method: "POST",
       headers: {
-        accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),

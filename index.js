@@ -8,8 +8,6 @@ async function getWorks() {
   return await reponse.json();
 }
 
-getWorks();
-
 // Fonction pour afficher les photos dynamiquement
 async function displayWorks() {
   gallery.innerHTML = "";
@@ -70,7 +68,6 @@ async function categoriesFilters() {
       } else {
         displayWorks();
       }
-      console.log(btnId);
     });
   });
 }
@@ -80,6 +77,7 @@ categoriesFilters();
 // Code si l'administrateur est connecté
 // Variables
 let token = localStorage.getItem("token");
+const modeEdition = document.querySelector(".modeEdition");
 const logout = document.querySelector(".logout");
 const btnModify = document.querySelector(".btnModify");
 const modal = document.querySelector(".modal");
@@ -88,6 +86,7 @@ const galleryPhoto = document.querySelector(".galleryPhoto");
 
 if (token) {
   filter.style.display = "none";
+  modeEdition.style.display = "flex";
   btnModify.style.display = "flex";
   btnModify.addEventListener("click", () => {
     modal.style.display = "flex";
@@ -230,7 +229,7 @@ async function displayModalCategories() {
 }
 displayModalCategories();
 
-// Ajouter un vehicule avec la methode POST
+// Ajouter une photo avec la methode POST
 const form = document.querySelector(".modalAddPhoto form");
 const title = document.getElementById("title");
 const category = document.getElementById("category");
