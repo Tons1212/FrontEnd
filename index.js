@@ -78,6 +78,7 @@ categoriesFilters();
 // Variables
 let token = localStorage.getItem("token");
 const modeEdition = document.querySelector(".modeEdition");
+const header = document.querySelector("header");
 const logout = document.querySelector(".logout");
 const btnModify = document.querySelector(".btnModify");
 const modal = document.querySelector(".modal");
@@ -87,6 +88,7 @@ const galleryPhoto = document.querySelector(".galleryPhoto");
 if (token) {
   filter.style.display = "none";
   modeEdition.style.display = "flex";
+  header.style.paddingTop = "60px";
   btnModify.style.display = "flex";
   btnModify.addEventListener("click", () => {
     modal.style.display = "flex";
