@@ -24,14 +24,14 @@ let loginBtn = submit.addEventListener("click", async (e) => {
         localStorage.setItem("token", data.token);
         location.href = "index.html";
       } else {
-        error.innerText = "Erreur dans l'identifiant et/ou le mot de passe";
-        function errDelete() {
-          error.innerText = "";
-        }
-        setTimeout(errDelete, 25000);
+        console.error("Erreur lors de la requête :", reponse.status);
       }
     } else {
-      console.error("Erreur lors de la requête :", reponse.status);
+      error.innerText = "Erreur dans l'identifiant et/ou le mot de passe";
+      function errDelete() {
+        error.innerText = "";
+      }
+      setTimeout(errDelete, 25000);
     }
   } catch (err) {
     console.error("erreur lors de la requête:", err);
