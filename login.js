@@ -20,12 +20,8 @@ let loginBtn = submit.addEventListener("click", async (e) => {
     });
     if (reponse.ok) {
       const data = await reponse.json();
-      if (data.userId) {
-        localStorage.setItem("token", data.token);
-        location.href = "index.html";
-      } else {
-        console.error("Erreur lors de la requête :", reponse.status);
-      }
+      localStorage.setItem("token", data.token);
+      location.href = "index.html";
     } else {
       error.innerText = "Erreur dans l'identifiant et/ou le mot de passe";
       function errDelete() {
