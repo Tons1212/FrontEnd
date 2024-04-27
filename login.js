@@ -2,7 +2,7 @@
 const submit = document.querySelector(".submit");
 const error = document.querySelector("form p");
 
-let loginBtn = submit.addEventListener("click", async (e) => {
+submit.addEventListener("click", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email");
   const password = document.getElementById("password");
