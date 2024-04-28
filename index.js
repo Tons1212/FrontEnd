@@ -37,7 +37,7 @@ async function getCategories() {
   return await reponse.json();
 }
 
-// Fonction pour afficher les catégories dynamiquement
+// Fonction pour afficher les boutons catégories dynamiquement
 async function displayCategories() {
   const categories = await getCategories();
   categories.forEach((category) => {
@@ -101,14 +101,14 @@ if (token) {
   });
 }
 
-xmark.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
 modal.addEventListener("click", (e) => {
   if (e.target.className === "modal") {
     modal.style.display = "none";
   }
+});
+
+xmark.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 
 // Afficher les photos dans la modale
